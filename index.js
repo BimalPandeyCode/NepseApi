@@ -41,7 +41,7 @@ async function runScript() {
         let dateStr = lastMarketDay(
           date.subtract(1, "days").format("YYYY-MM-DD")
         );
-
+        console.log("Running for: ", dateStr);
         if (fs.existsSync(`./data/date/${dateStr}.json`)) continue;
         const data = await fetchData(dateStr);
         if (data) {
